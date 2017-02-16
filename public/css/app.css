@@ -5786,6 +5786,11 @@ p {
   #logout:hover {
     background-color: transparent; }
 
+#logout {
+  cursor: default; }
+  #logout:hover {
+    background-color: transparent; }
+
 /* footer */
 footer {
   margin-top: 45px;
@@ -5845,7 +5850,6 @@ section.user_info {
 /* forms */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px; }
 
 input {
