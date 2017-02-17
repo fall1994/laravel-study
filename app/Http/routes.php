@@ -34,3 +34,5 @@ get('password/email', 'Auth\PasswordController@getEmail')->name('passowrd.reset'
 post('password/email', 'Auth\PasswordController@postEmail')->name('passowrd.reset');
 get('password/reset/{token}', 'Auth\PasswordController@getReset')->name('password.edit');
 post('password/reset', 'Auth\PasswordController@postReset')->name('password.update');
+
+resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
