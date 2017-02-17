@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Models\Status;
 
 class StatusesController extends Controller
 {
@@ -24,6 +25,14 @@ class StatusesController extends Controller
     	Auth::user()->statuses()->create([
     		'content'=>$request->content
     		]);
+    	return redirect()->back();
+    }
+    public function destroy($id)
+    {
+    	$status = Status::findOrFail($id);
+    	$this->authorize('destroy', $status);
+    	$status->delete();
+    	session()->flash('success','微博已被成功删除！');
     	return redirect()->back();
     }
 }
